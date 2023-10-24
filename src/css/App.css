@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Poppins&display=swap');
+
+.App {
+  height: 100vh;
+  width: 100%;
+  background-color: transparent;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.page-title {
+  text-align: center;
+  position: relative;
+  top: 40%;
+}
+
+.App-header {
+  background-color: #b79681;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  color: black;
+  width: 100%;
+}
+
+.navbar-section {
+  background-color: beige;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+}
+
+.nav-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  width: 100%;
+}
+
+.Logo {
+  width: 38vh;
+  height: auto;
+  margin-left: 5vh;
+  margin-top: 7vh;
+}
+
+/* div för produkt+varukorg knapp */
+.Buttons {
+  background-color: #7a6456; /* Bakgrundsfärg */
+  color: black;
+  padding: 10px 10px; /* Utrymme inom knappen */
+  display: flex;
+  flex-direction: row;
+  gap: 10px; /* Lägg till mellanrum mellan knapparna/länkarna */
+  margin-right: 3.5vh;
+}
+
+/* Produkter-knappen */
+.products-btn {
+  display: flex;
+  background-color: #9a7134; /* Ändra knappens bakgrundsfärg, t.ex., brun */
+  color: white; /* textfärg */
+  padding: 10px 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Varukorg-knappen */
+.cart-btn {
+  background-color: #d0a66a; /* Ändra knappens bakgrundsfärg, t.ex., brun */
+  color: white; /* Ändra knappens textfärg, t.ex., vit */
+  padding: 10px 20px; /* Justera knappens storlek efter dina önskemål */
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* main */
+.hero-section {
+  background-color: transparent;
+  height: 10vh;
+  width: 100%;
+}
+
+.page-title {
+  background-color: transparent;
+  margin: 6vh;
+}
+
+.main-section {
+  background-color: #61dafb;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+
+.div-body {
+  background-color: beige;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.product-section {
+  width: 100%;
+  height: auto;
+  background-color: #C3B68D;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 15vh;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tre kolumner med lika bredd */
+  grid-gap: 20px; /* Avstånd mellan produkter */
+}
+
+.product-card {
+  background-color: #F3F3DC;
+  padding: 5vh;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin: 1vh;
+}
+
+.product-card img {
+  width: 230px;
+  height: 270px;
+
+}
+
+/* Tryckbar knapp */
+.active-button {
+  background-color: #5c945d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.active-button:hover {
+  background-color: #366b3d;
+}
+
+/* Icke-tryckbar knapp */
+.inactive-button {
+  background-color: #ccc;
+  color: #666;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: not-allowed;
+}
