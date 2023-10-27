@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Poppins&display=swap');
 
+
+
 .App {
   height: 100vh;
   width: 100%;
@@ -14,11 +16,16 @@
   top: 40%;
 }
 
+h1 {
+  text-shadow: 1px 2px 0 #e5e3db;
+
+}
+
 .App-header {
   background-color: #b79681;
   align-items: center;
   justify-content: space-between;
-  font-size: 16px;
+  font-size: 2rem;
   color: black;
   width: 100%;
 }
@@ -48,34 +55,57 @@
 
 /* div för produkt+varukorg knapp */
 .Buttons {
-  background-color: #7a6456; /* Bakgrundsfärg */
-  color: black;
-  padding: 10px 10px; /* Utrymme inom knappen */
+  background-color: transparent;
+  padding: 2rem; /* Utrymme inom div */
   display: flex;
-  flex-direction: row;
-  gap: 10px; /* Lägg till mellanrum mellan knapparna/länkarna */
-  margin-right: 3.5vh;
+  flex-direction: row; /* för att ha knapparna bredvid varandra*/
+  gap: 3rem; /* mellanrum mellan knapparna/länkarna */
+  border-radius: 1rem;
 }
 
 /* Produkter-knappen */
 .products-btn {
-  display: flex;
-  background-color: #9a7134; /* Ändra knappens bakgrundsfärg, t.ex., brun */
+  background-color: #524837;
   color: white; /* textfärg */
-  padding: 10px 30px;
+  padding: 20px 50px;
   border: none;
   cursor: pointer;
   font-size: 24px;
+  transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out;
+  border-radius: 2rem;
+  margin-left: 1rem;
+}
+
+.cart-icon {
+  font-size: 2rem;
+}
+
+.products-btn:hover {
+  background-color: #a96e2e;
+  transform: scale(1.05);
 }
 
 /* Varukorg-knappen */
 .cart-btn {
-  background-color: #d0a66a; /* Ändra knappens bakgrundsfärg, t.ex., brun */
-  color: white; /* Ändra knappens textfärg, t.ex., vit */
-  padding: 10px 20px; /* Justera knappens storlek efter dina önskemål */
+  background-color: rgb(93, 138, 128); /*  bakgrundsfärg */
+  color: white; /* knappens textfärg */
+  padding: 20px 70px; /*storlek på kundvagns knappen*/
   border: none;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 2rem;
+  transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out;
+  border-radius: 1rem;
+  margin-left: 2rem;
+
+}
+h6 {
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.cart-btn:hover{
+  background-color: #5c945d;
+  transform: scale(1.05);
 }
 
 /* main */
@@ -85,19 +115,20 @@
   width: 100%;
 }
 
+/* sido titel div */
 .page-title {
-  background-color: transparent;
-  margin: 6vh;
+  background-color: #f3f3dc;
+  padding: 2rem;
+  border-radius: 9px;
+  margin: 3rem;
+  margin-bottom: 7rem;
 }
 
-.main-section {
-  background-color: #61dafb;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
+p {
+  margin-left: 1rem;
 }
 
+/*huvud div för hemsidans kropp*/
 .div-body {
   background-color: beige;
   align-items: center;
@@ -123,22 +154,32 @@
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Tre kolumner med lika bredd */
-  grid-gap: 20px; /* Avstånd mellan produkter */
+  grid-gap: 5rem; /* Avstånd mellan produkter */
 }
 
 .product-card {
   background-color: #F3F3DC;
-  padding: 5vh;
+  padding: 6rem;
   text-align: center;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 8px 5px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   margin: 1vh;
 }
 
-.product-card img {
-  width: 230px;
-  height: 270px;
+.product-card h2 {
+  font-weight: bold;
+}
 
+.product-card img {
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  width: 230px;
+  height: 275px;
+
+}
+
+.product-card p {
+  font-size: 1.5rem;
 }
 
 /* Tryckbar knapp */
@@ -147,11 +188,14 @@
   color: #fff;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 20px 40px;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.2s;
+  margin: 2rem;
 }
+
+
 
 .active-button:hover {
   background-color: #366b3d;
@@ -159,11 +203,115 @@
 
 /* Icke-tryckbar knapp */
 .inactive-button {
-  background-color: #ccc;
-  color: #666;
+  background-color: #7d7f88 !important;
+  color: #ffffff;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 20px 40px;
+  font-size: 1.2rem;
   cursor: not-allowed;
+  margin: 2rem;
+}
+
+
+/* --------------cart page ------------*/
+
+.cart-container {
+  background-color: #f4f4f4;
+  padding: 2rem;
+  border: 2px solid #cec5b1;
+  border-radius: 7px;
+  box-shadow: 6px 9px 12px rgb(187, 174, 155);
+  margin: 1rem;
+
+}
+
+h4 {
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cart-tabell {
+  width: 100%;
+  border-collapse: collapse;
+
+}
+
+.cart-tabell th,
+.cart-tabell td {
+  border: 3px solid #8a7768;
+  padding: 1rem;
+  text-align: left;
+}
+
+/* tabellrubrik */
+.cart-tabell th {
+  background-color: #e0d3c4;
+  color: #362b06;
+  padding: 1rem;
+  text-align: left;
+  border-spacing: 5vh;
+
+}
+
+/* tabellceller */
+.cart-tabell td {
+  border: 3px solid #beb7a7;
+  padding: 1rem;
+  margin-right: 2rem;
+
+}
+
+
+
+th {
+  padding: 5vh;
+}
+
+td {
+
+
+}
+
+/* Hover-effekt för rader */
+.cart-tabell tr:hover {
+  background-color: #413f38;
+  color: #e6e6ec;
+  cursor: pointer;
+
+}
+
+.light:hover {
+  color: yellow;
+}
+
+#emptyCartBtn {
+  margin-top: 20px;
+  margin-left: 71vh;
+}
+
+#buy-button {
+  margin-top: 20px;
+  margin-left: 70vh;
+
+}
+
+.total-price {
+  height: 2rem;
+  line-height: 2rem;
+}
+
+.light {
+  color: #1e1f21;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+}
+.thick {
+  color: #272727;
+  font-size: 1.4rem;
+  font-weight: bold;
+  float: right;
+
+
 }

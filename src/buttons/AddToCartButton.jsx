@@ -1,9 +1,9 @@
-// Add to cart-button
+// Add to cart-button, Alltså "Lägg till varukorgen"-knappen i ProductCard-komponenten.
 
 import React from "react";
 import Button from "react-bootstrap/Button";
 
-export function AddToCartButton({ inStock, clickAddToCart, selectedProduct }) {
+export function AddToCartButton({ inStock, selectedProduct, clickAddToCart }) {
   const buttonClassName = inStock ? "active-button" : "inactive-button";
 
   return (
@@ -12,11 +12,8 @@ export function AddToCartButton({ inStock, clickAddToCart, selectedProduct }) {
       variant="primary"
       onClick={inStock ? () => clickAddToCart(selectedProduct) : null}
       disabled={!inStock}
-
     >
       Lägg till varukorg
     </Button>
   );
 }
-
-
