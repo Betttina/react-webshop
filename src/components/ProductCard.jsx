@@ -15,7 +15,7 @@ export default function ProductCard({
 
   const handleAddToCart = () => {
     // skicka med produkten som argument
-    clickAddToCart();
+    clickAddToCart(product);
   };
 
   return (

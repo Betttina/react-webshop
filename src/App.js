@@ -10,7 +10,6 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState("product");
   const [products, setProducts] = useState([]); // tillståndsvariabel för produkter
   const [cart, setCart] = useState([]); // Kundvagn-state. basket är en array som innehåller produkterna som har lagts till av user. nya element kan läggas till.
-  const [basket, setBasket] = useState([]);
 
   const NavToProducts = () => {
     setCurrentPage("product");
@@ -24,37 +23,28 @@ export default function App() {
     setCurrentPage("confirm");
   };
 
-  const handleShowCart = () => {
-    console.log("Varukorgsknappen är klickad");
+  /*const handleShowCart = () => {
     setCurrentPage(true);
-  };
-  console.log("Cart in App.js:", cart);
+  };*/
 
+  /* spara i närminnet */
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await fetchProducts();
+        console.log("fetched data", data);
         setProducts(data);
       } catch (error) {
         console.error("Error fetching product-data:", error);
       }
     };
-
     fetchData(); // calling fetchData inuti useEffect
-  }, []); // kör useEffect 1 gång, empty dependent array
+  }, []); // beroende -> kör useEffect när setProd ändras
 
-  useEffect(() => {
-    console.log("Komponenten har monterats.");
-  }, []);
-
-  const handleClick = () => {
-    console.log("Knappen har klickats på.");
-  };
-
-  // when user adds products to cart
+  //------------------ when user adds products to cart
   const addToCart = (product) => {
     if (product.lagersaldo > 0) {
-      const updatedCart = [...cart, product];
+      const updatedCart = [...cart];
       const index = updatedCart.findIndex((item) => item.id === product.id);
 
       if (index !== -1) {
@@ -69,6 +59,7 @@ export default function App() {
       product.lagersaldo -= 1;
 
       setCart(updatedCart);
+      console.log(product.lagersaldo);
     }
   };
 
@@ -100,7 +91,6 @@ export default function App() {
     setCart([]);
   };
 
-  console.log(cart);
   return (
     <div className="App">
       <Navbar
@@ -112,7 +102,7 @@ export default function App() {
         {currentPage === "product" ? (
           <ProductPage
             products={products}
-            addToCart={addToCart}
+            clickAddToCart={addToCart}
             cart={cart}
             setCart={setCart}
           />

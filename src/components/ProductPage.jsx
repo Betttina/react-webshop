@@ -5,12 +5,12 @@ import { fetchProducts } from "../api/getdata";
 
 export function ProductPage({
   products,
-  clickAddToCart,
+
   setProducts,
   cart,
   setCart,
 }) {
-  const fetchData = () => {
+  /* const fetchData = () => {
     return new Promise((resolve, reject) => {
       // Simulera en asynkron operation, t.ex. ett API-anrop
       setTimeout(() => {
@@ -19,15 +19,8 @@ export function ProductPage({
       }, 2000);
     });
   };
-
-  // Anropa fetchData och hantera resultatet med .then och .catch
-  fetchData()
-    .then((result) => {
-      console.log("Lyckades:", result);
-    })
-    .catch((error) => {
-      console.error("Misslyckades:", error);
-    });
+*/
+  // Anropa fetchData och hantera resultatet med .then och .catc
 
   return (
     <div className="product-section">

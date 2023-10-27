@@ -5,9 +5,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
-export function CartButton({ setShowCart, onNavToCart, cart }) {
-  console.log(typeof setShowCart);
-
+export function CartButton({ onNavToCart, cart }) {
   return (
     <button className="cart-btn" onClick={onNavToCart}>
       <div className="cart-icon">

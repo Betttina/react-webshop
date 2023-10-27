@@ -17,6 +17,20 @@ export function CartPage({
     setShowProductsPage(true);
   };
 
+  // Funktion för att räkna ut totalsumman
+  function calculateTotal(cart) {
+    return cart.reduce((total, item) => {
+      console.log(total, item);
+      //const itemTotal = item.pris * item.quantity; // Om du har quantity i produktdata
+      return total + item.pris;
+    }, 0);
+  }
+
+  const totalSumma = cart.reduce(
+    (total, item) => total + item.pris * item.quantity,
+    0
+  );
+
   // Empty cart (tillfällig kundkorg). Sätter cart till [] (tom array)
   const handleEmptyCart = () => {
     setCart([]);
@@ -47,7 +61,7 @@ export function CartPage({
                 <td> {item.name} </td>
                 <td> {item.pris} </td>
                 <td> {item.quantity} </td>
-                <td>{item.pris * item.quantity} kr</td>
+                <td>{parseInt(item.pris) * parseInt(item.quantity)} kr</td>
               </tr>
             ))}
           </tbody>
@@ -85,7 +99,7 @@ export function CartPage({
             Töm varukorgen
           </button>
           <div className="cart-total">
-            <p>Totalt: {calculateTotal(cart)} kr</p>
+            <p>Totalt: totalSumma(cart)} kr</p>
           </div>
         </div>
       </div>

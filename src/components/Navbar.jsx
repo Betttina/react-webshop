@@ -5,8 +5,6 @@ import { CartButton } from "../buttons/CartButton";
 import { ProductsButton } from "../buttons/ProductsButton";
 
 export function Navbar({ onNavToProducts, onNavToCart, cart, setShowCart }) {
-  console.log("Cart in Navbar:", cart);
-
   return (
     <div className="navbar-section">
       <div className="nav-body">
@@ -19,7 +17,6 @@ export function Navbar({ onNavToProducts, onNavToCart, cart, setShowCart }) {
             cart={cart}
             setShowCart={setShowCart}
           />
-          )
         </div>
       </div>
     </div>

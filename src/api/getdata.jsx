@@ -5,7 +5,6 @@ export async function fetchProducts() {
   try {
     const response = await fetch(apiUrl);
     if (response.ok) {
-      console.log(response);
       return await response.json();
     } else {
       throw new Error("Något gick fel vid hämtning av produkter");
